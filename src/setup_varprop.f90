@@ -132,6 +132,8 @@ SUBROUTINE setup_varprop
     varprop(i) = variable(v%lev,0,0,err_ind,err_ind,err_ind,v%id,'Latent heat flux','w/m^2',.FALSE.)
   CASE('QQ','QQP1','QQP2')
     varprop(i) = variable(v%lev,0,0,50.,100.,0.,v%id,'Specific humidity','g/Kg',.FALSE.)
+  CASE('DSN','DSNP1','DSNP2')
+    varprop(i) = variable(v%lev,0,0,50.,1000.,0.,v%id,'Snow depth','cm',.FALSE.)
   CASE('SW')
     varprop(i) = variable(v%lev,0,0,err_ind,err_ind,err_ind,v%id,'Short wave radiation','W/m^2',.FALSE.)
   CASE('UW')

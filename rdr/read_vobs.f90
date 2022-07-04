@@ -296,7 +296,9 @@ SUBROUTINE read_vobs
               CASE('DSNP1','DSNP2')
                mm = find_var(ninvar,invar,varprop(m)%id(1:3))
                IF ( mm > 0 ) THEN
-                IF ( qca(val(mm),mflag)) &
+                IF ( qca(val(mm),mflag)            .AND. &
+                     qclr(val(mm),varprop(m)%llim) .AND. &
+                     qcur(val(mm),varprop(m)%ulim) )     &
                 obs(stat_i)%o(i)%val(m) = val(mm) * 1.e2
                ENDIF
               CASE('LA')
